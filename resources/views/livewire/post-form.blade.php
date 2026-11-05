@@ -9,16 +9,24 @@
         </ul>
     @endif
 
-    <form wire:submit="save">
-        <input type="text" wire:model="title">
+    <ul>
+        @foreach ($titles as $title)
+            <li>
+                <livewire:row :title="$title" wire:key="{{ $title }}" />
+            </li>
+        @endforeach
+    </ul>
+
+    <form wire:submit="save" class="flex justify-center flex-col gap-3">
+        <input class="input" type="text" wire:model="title">
         @error('title')
             {{ $message }}
         @enderror
-        <textarea wire:model="body"></textarea>
+        <textarea class="textarea" wire:model="body"></textarea>
         @error('body')
             {{ $message }}
         @enderror
-        <button type="submit">Отправить</button>
-        <button type="button" wire:click="clear">Очистить</button>
+        <livewire:button>Отправить</livewire:button>
     </form>
+    <livewire:button>Очистить</livewire:button>
 </div>

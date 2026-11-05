@@ -11,6 +11,12 @@ class PostForm extends Component
 
     public $body = '';
 
+    public $submit = 'Отправить';
+
+    public $clear = 'Очистить';
+
+    public $titles = ['News', 'Scince', 'Auto'];
+
     public function save()
     {
         $this->validate([
