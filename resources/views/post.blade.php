@@ -1,4 +1,3 @@
 <x-layout>
-    <livewire:post-card />
-    <livewire:post-views />
+    <livewire:post-form />
 </x-layout>
